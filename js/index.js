@@ -12,6 +12,27 @@ const strings = [
   "Visual Studio Code",
 ];
 
+const result = strings.includes("HTMLlllll");
+//console.log(result);
+
+// if (strings.includes("HTML"){do something} else {do something else})
+strings.push("SQL");
+//console.log("strings: ", strings);
+function log(element) {
+  console.log(element);
+}
+
+//strings.forEach(log);
+
+strings.forEach((element) => {
+  //console.log(element.toUpperCase());
+  const card = document.createElement("div");
+  card.classList.add("card");
+  card.textContent = element.toUpperCase();
+  document.body.append(card);
+});
+// console.log("result2: ", result2);
+
 // --- Games ---
 const gamesContainer = document.querySelector("[data-js='games-container']");
 const games = [
@@ -96,3 +117,39 @@ const games = [
       "Have you heard of the Extreme Laser Cats From Jupiter? Of course you have! Unfortunately, they have decided to attack earth. The Apocalypse is upon us - and it's very cute.",
   },
 ];
+
+function greet() {
+  console.log("Hello");
+}
+
+function greetWorld(param) {
+  console.log(param);
+  param();
+}
+
+//greetWorld(greet);
+
+//button.addEventListener("click", ()=>{});
+games.forEach((element) => {
+  console.log(element.name);
+});
+
+const result3 = strings.map((element) => {
+  return element.toUpperCase();
+});
+console.log("result3: ", result3);
+
+//filter
+const gamesBefore2000 = games.filter((game) => {
+  if (game.publishingYear < 1990) {
+    return true;
+  } else {
+    return false;
+  }
+});
+console.log("gamesBefore2000: ", gamesBefore2000);
+
+const searchResult = games.find((game) => {
+  return game.id === 3;
+});
+console.log("searchResult: ", searchResult);
